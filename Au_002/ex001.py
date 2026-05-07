@@ -8,7 +8,14 @@ qtd_notas = len(notas)
 def media(value1, value2):
     media_aluno = value1 / value2
     media_aluno = round(media_aluno, 2)
-    print(f"A media do aluno é {media_aluno}!")
-    
-media(somatorio, qtd_notas)
+    return media_aluno
 
+def boletim ():
+    
+    if media(somatorio, qtd_notas) >= 6:
+        print("O aluno foi aprovado!")
+    else:
+        print("O aluno foi reprovado!")
+        
+media(somatorio, qtd_notas)
+boletim()
