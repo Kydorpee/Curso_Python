@@ -1,7 +1,10 @@
 import os
-escolha_cliente = 0
+restaurantes = []
+
+# Funçoes
 
 def iniciar_app():
+    
     print("""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -14,28 +17,49 @@ def iniciar_app():
     print('2. Listar restaurante')
     print('3. Ativar restaurante')
     print('4. Sair\n')
-def coletar_escolha(x):
-    x = input('Escolha uma opção: ')
-    if x == '1':
-        print('Opção 1 - Cadastrar restaurante')
-    elif x == '2':
-        print('Opção 2 - Listar restaurante')
-    elif x == '3':
-        print('Opção 3 - Ativar restaurante')
-    elif x == '4':
-        print('Opção 4 - Sair')
-        sair_menu()
-    else:
-        print('Opção inválida!')
-        return x
+def opcao_invalida():
+    input('Opção inválida! pressione enter para tentar novamente...')
+    main()
+def cadastrar_restaurante():
+    try:
+        os.system('cls')
+        print('Cadastrar restaurante:\n')
+        nome_restaurante = input('Digite o nome do restaurante: ')
+        print(f'O {nome_restaurante} foi cadastrado com sucesso!\n')
+        input('Pressione enter para voltar ao menu...')
+        main()
+    except:
+        print('Ocorreu um erro ao cadastrar o restaurante. Tente novamente.')
+        input('Pressione enter para voltar ao menu...')
+        main()
+
+def coletar_escolha():
+    try:
+        x = input('Escolha uma opção: ')
+        
+        if x == '1':
+            cadastrar_restaurante()
+        elif x == '2':
+            print('Opção 2 - Listar restaurante')
+        elif x == '3':
+            print('Opção 3 - Ativar restaurante')
+        elif x == '4':
+            print('Opção 4 - Sair')
+            sair_menu()
+        else:
+            opcao_invalida()
+    except:
+        opcao_invalida()  
 def sair_menu():
     os.system('cls')
     print('Saindo do menu...')
 
     
 def main():
+    os.system('cls')
     iniciar_app()
-    coletar_escolha(escolha_cliente)
+    coletar_escolha()
+
 
 if __name__ == '__main__':
     main()
