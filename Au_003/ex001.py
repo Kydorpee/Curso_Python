@@ -31,15 +31,15 @@ def opcao_invalida():
 def cadastrar_restaurante():
     try:
         exibir_funcao("Cadastro de restaurante")
-        
+
         nome_restaurante = input('Digite o nome do restaurante: ')
         nome_restaurante = nome_restaurante.upper()
-        categoria_restaurante = input('Digite o nome do restaurante: ')
+        categoria_restaurante = input('Digite a categoria do restaurante: ')
         categoria_restaurante = categoria_restaurante.upper()
 
         dados_novo_restaurante = [{'NOME':nome_restaurante,'CATEGORIA':categoria_restaurante,'STATUS':False}]
 
-        restaurantes.append(restaurantes(dados_novo_restaurante))
+        restaurantes.append(dados_novo_restaurante)
 
         print(f'O {nome_restaurante} foi cadastrado com sucesso!\n')
         retornar_menu()
