@@ -33,6 +33,12 @@ def sair_menu():
     print('Saindo do menu...')
 
     
-iniciar_app()
-coletar_escolha(escolha_cliente)
+def main():
+    iniciar_app()
+    coletar_escolha(escolha_cliente)
 
+if __name__ == '__main__':
+    main()
+
+
+   
