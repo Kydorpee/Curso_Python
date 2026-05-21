@@ -1,8 +1,13 @@
 import os
-restaurantes = []
+restaurantes = ['PKS Lanches','123 LANXHES']
 
 # Funçoes
-
+def exibir_funcao(texto):
+    os.system('cls')
+    print(f'{texto}:\n')
+def retornar_menu():
+    input("Pressione enter para retornar ao menu principal...")
+    main()
 def iniciar_app():
     
     print("""
@@ -22,28 +27,24 @@ def opcao_invalida():
     main()
 def cadastrar_restaurante():
     try:
-        os.system('cls')
-        print('Cadastrar restaurante:\n')
+        exibir_funcao("Cadastro de restaurante")
         nome_restaurante = input('Digite o nome do restaurante: ')
         nome_restaurante = nome_restaurante.upper()
 
         restaurantes.append(nome_restaurante)
 
         print(f'O {nome_restaurante} foi cadastrado com sucesso!\n')
-        input('Pressione enter para voltar ao menu...')
-        main()
-        
+        retornar_menu()
+
     except:
         print('Ocorreu um erro ao cadastrar o restaurante. Tente novamente.')
         input('Pressione enter para voltar ao menu...')
         main()
 def listar_restaurantes():
-    os.system('cls')
-    print('Lista de restaurantes cadastrados:\n')
+    exibir_funcao("Lista de restaurantes")
     for item in restaurantes:
         print(f'- {item}\n')
-    input("Pressione enter para retornar ao menu principal...")
-    main()
+    retornar_menu()
 
 
 
