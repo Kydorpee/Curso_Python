@@ -25,6 +25,7 @@ def cadastrar_restaurante():
         os.system('cls')
         print('Cadastrar restaurante:\n')
         nome_restaurante = input('Digite o nome do restaurante: ')
+        restaurantes.append(nome_restaurante)
         print(f'O {nome_restaurante} foi cadastrado com sucesso!\n')
         input('Pressione enter para voltar ao menu...')
         main()
