@@ -60,7 +60,12 @@ def listar_restaurantes():
         print(f'- {nome_restaurante} | {categoria_restaurante} | {status}\n')
 
     retornar_menu()
+def alterar_status():
+    exibir_funcao("Alterar Status")
+    
+    
 
+    retornar_menu()
 
 
 def coletar_escolha():
@@ -72,7 +77,7 @@ def coletar_escolha():
         elif x == '2':
             listar_restaurantes()
         elif x == '3':
-            print('Opção 3 - Ativar restaurante')
+            alterar_status()
         elif x == '4':
             print('Opção 4 - Sair')
             sair_menu()
