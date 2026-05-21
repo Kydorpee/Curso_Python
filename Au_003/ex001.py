@@ -1,13 +1,16 @@
 import os
-restaurantes = ['PKS Lanches','123 LANXHES']
 
-# Funçoes
+restaurantes = [{'NOME':'PKS LANCHES','CATEGORIA':'HAMBURGUERIA','STATUS':True}]
+
+# Funçoes cabecario
 def exibir_funcao(texto):
     os.system('cls')
     print(f'{texto}:\n')
 def retornar_menu():
     input("Pressione enter para retornar ao menu principal...")
     main()
+
+# Funçoes principais
 def iniciar_app():
     
     print("""
@@ -28,10 +31,15 @@ def opcao_invalida():
 def cadastrar_restaurante():
     try:
         exibir_funcao("Cadastro de restaurante")
+        
         nome_restaurante = input('Digite o nome do restaurante: ')
         nome_restaurante = nome_restaurante.upper()
+        categoria_restaurante = input('Digite o nome do restaurante: ')
+        categoria_restaurante = categoria_restaurante.upper()
 
-        restaurantes.append(nome_restaurante)
+        dados_novo_restaurante = [{'NOME':nome_restaurante,'CATEGORIA':categoria_restaurante,'STATUS':False}]
+
+        restaurantes.append(restaurantes(dados_novo_restaurante))
 
         print(f'O {nome_restaurante} foi cadastrado com sucesso!\n')
         retornar_menu()
@@ -43,7 +51,11 @@ def cadastrar_restaurante():
 def listar_restaurantes():
     exibir_funcao("Lista de restaurantes")
     for item in restaurantes:
-        print(f'- {item}\n')
+        nome_restaurante = item['NOME']
+        categoria_restaurante = item['CATEGORIA']
+        status = item['STATUS']
+
+        print(f'- {nome_restaurante} | {categoria_restaurante} | {status}\n')
     retornar_menu()
 
 
@@ -66,8 +78,7 @@ def coletar_escolha():
     except:
         opcao_invalida()  
 def sair_menu():
-    os.system('cls')
-    print('Saindo do menu...')
+    exibir_funcao("Saindo do menu")
 
     
 def main():
