@@ -1,6 +1,6 @@
 import os
 
-restaurantes = [{}]
+restaurantes = [{'NOME':'PKS LANCHES','CATEGORIA':'HAMBURGUERIA','STATUS':True}]
 
 # Funçoes cabecario
 def exibir_funcao(texto):
@@ -33,9 +33,11 @@ def cadastrar_restaurante():
         exibir_funcao("Cadastro de restaurante")
 
         nome = input('Digite o nome do restaurante: ')
+        nome = nome.upper()
         categoria = input('Digite a categoria do restaurante: ')
+        categoria = categoria.upper()
 
-        dados_novo_restaurante = [{'NOME': nome,'CATEGORIA': categoria,'STATUS': False}]
+        dados_novo_restaurante = {'NOME': nome,'CATEGORIA': categoria,'STATUS': False}
 
         restaurantes.append(dados_novo_restaurante)
 
@@ -47,11 +49,10 @@ def cadastrar_restaurante():
         input('Pressione enter para voltar ao menu...')
         main()
 def listar_restaurantes():
-    
+
     exibir_funcao("Lista de restaurantes")
 
     for item in restaurantes:
-
         nome_restaurante = item['NOME']
         categoria_restaurante = item['CATEGORIA']
         status = item['STATUS']
