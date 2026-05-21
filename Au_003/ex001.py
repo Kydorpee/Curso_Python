@@ -33,6 +33,15 @@ def cadastrar_restaurante():
         print('Ocorreu um erro ao cadastrar o restaurante. Tente novamente.')
         input('Pressione enter para voltar ao menu...')
         main()
+def listar_restaurantes():
+    os.system('cls')
+    print('Lista de restaurantes cadastrados:\n')
+    for item in restaurantes:
+        print(f'- {item}\n')
+    input("Pressione enter para retornar ao menu principal...")
+    main()
+
+
 
 def coletar_escolha():
     try:
@@ -41,7 +50,7 @@ def coletar_escolha():
         if x == '1':
             cadastrar_restaurante()
         elif x == '2':
-            print('Opção 2 - Listar restaurante')
+            listar_restaurantes()
         elif x == '3':
             print('Opção 3 - Ativar restaurante')
         elif x == '4':
