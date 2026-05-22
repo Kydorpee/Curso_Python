@@ -35,7 +35,7 @@ def cadastrar_restaurante():
         nome = input('Digite o nome do restaurante: ')
         categoria = input('Digite a categoria do restaurante: ')
 
-        dados_novo_restaurante = {'NOME': nome,'CATEGORIA': categoria,'STATUS': False}
+        dados_novo_restaurante = {'NOME':nome,'CATEGORIA':categoria,'STATUS':False}
 
         restaurantes.append(dados_novo_restaurante)
 
@@ -52,11 +52,11 @@ def listar_restaurantes():
 
     for item in restaurantes:
 
-        nome_restaurante = item['NOME']
-        categoria_restaurante = item['CATEGORIA']
+        nome = item['NOME']
+        categoria = item['CATEGORIA']
         status = item['STATUS']
 
-        print(f'- {nome_restaurante} | {categoria_restaurante} | {status}\n')
+        print(f'- {nome} | {categoria} | {status}\n')
 
     retornar_menu()
 
