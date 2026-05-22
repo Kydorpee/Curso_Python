@@ -59,6 +59,7 @@ def listar_restaurantes():
         print(f'- {nome} | {categoria} | {status}\n')
 
     retornar_menu()
+    
 def alterar_status():
     iniciar_app("Alteração de status do restaurante")
     nome = input('Digite o nome do restaurante para alterar o status: ')
