@@ -1,6 +1,6 @@
 import os
 
-restaurantes = [{}]
+restaurantes = []
 
 # Funçoes cabecario
 def exibir_funcao(texto):
