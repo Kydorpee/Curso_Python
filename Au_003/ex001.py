@@ -35,7 +35,7 @@ def cadastrar_restaurante():
         nome = input('Digite o nome do restaurante: ')
         categoria = input('Digite a categoria do restaurante: ')
 
-        dados_novo_restaurante = [{'NOME': nome,'CATEGORIA': categoria,'STATUS': False}]
+        dados_novo_restaurante = {'NOME': nome,'CATEGORIA': categoria,'STATUS': False}
 
         restaurantes.append(dados_novo_restaurante)
 
