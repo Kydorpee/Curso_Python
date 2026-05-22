@@ -59,8 +59,17 @@ def listar_restaurantes():
         print(f'- {nome} | {categoria} | {status}\n')
 
     retornar_menu()
-
-
+def alterar_status():
+    iniciar_app("Alteração de status do restaurante")
+    nome = input('Digite o nome do restaurante para alterar o status: ')
+    for item in restaurantes:
+        if item['NOME'] == nome:
+            item['STATUS'] = not item['STATUS']
+            print(f'O status do restaurante {nome} foi alterado para {item["STATUS"]}.\n')
+            break
+    else:
+        print(f'Não foi encontrado um restaurante com o nome {nome}.\n')
+    retornar_menu()
 
 def coletar_escolha():
     try:
@@ -71,7 +80,7 @@ def coletar_escolha():
         elif x == '2':
             listar_restaurantes()
         elif x == '3':
-            print('Opção 3 - Ativar restaurante')
+            alterar_status()
         elif x == '4':
             print('Opção 4 - Sair')
             sair_menu()
