@@ -26,6 +26,7 @@ def iniciar_app():
     print('3. Ativar restaurante')
     print('4. Sair\n')
 def opcao_invalida():
+    os.system('cls')
     input('Opção inválida! pressione enter para tentar novamente...')
     main()
 def cadastrar_restaurante():
@@ -59,18 +60,12 @@ def listar_restaurantes():
         print(f'- {nome} | {categoria} | {status}\n')
 
     retornar_menu()
-    
 def alterar_status():
+
     iniciar_app("Alteração de status do restaurante")
-    nome = input('Digite o nome do restaurante para alterar o status: ')
-    for item in restaurantes:
-        if item['NOME'] == nome:
-            item['STATUS'] = not item['STATUS']
-            print(f'O status do restaurante {nome} foi alterado para {item["STATUS"]}.\n')
-            break
-    else:
-        print(f'Não foi encontrado um restaurante com o nome {nome}.\n')
     retornar_menu()
+
+
 
 def coletar_escolha():
     try:
