@@ -5,7 +5,9 @@ restaurantes = []
 # Funçoes cabecario
 def exibir_funcao(texto):
     os.system('cls')
-    print(f'{texto}:\n')
+    print('===============================')
+    print(f'{texto}:')
+    print('===============================\n')
 def retornar_menu():
     input("Pressione enter para retornar ao menu principal...")
     main()
