@@ -38,7 +38,7 @@ def cadastrar_restaurante():
         categoria = input('Digite a categoria do restaurante: ')
         categoria = categoria.upper()
 
-        dados_novo_restaurante = [{'NOME': nome,'CATEGORIA': categoria,'STATUS': False}]
+        dados_novo_restaurante = {'NOME':nome,'CATEGORIA':categoria,'STATUS':False}
 
         restaurantes.append(dados_novo_restaurante)
 
@@ -55,15 +55,30 @@ def listar_restaurantes():
 
     for item in restaurantes:
 
-        nome_restaurante = item['NOME']
-        categoria_restaurante = item['CATEGORIA']
+        nome = item['NOME']
+        categoria = item['CATEGORIA']
         status = item['STATUS']
 
         print(f'- {nome} | {categoria} | {status}\n')
 
     retornar_menu()
 
+def alterar_status():
 
+    exibir_funcao("Alteração status")
+
+    nome_restaurante = input('Digite o nome do restaurante para alterar o status: ')
+
+    for item in restaurantes:
+        if item['NOME'] == nome_restaurante:
+            item['STATUS'] = not item['STATUS']
+            print(f'O status do restaurante {nome_restaurante} foi alterado para {item["STATUS"]}.\n')
+            break
+
+        else:
+            print(f'Não foi encontrado um restaurante com o nome {nome_restaurante}.\n')
+
+    retornar_menu()
 
 def coletar_escolha():
     try:
