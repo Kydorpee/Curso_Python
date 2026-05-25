@@ -1,6 +1,6 @@
 import os
 
-restaurantes = [{'NOME':'PKS LANCHES','CATEGORIA':'HAMBURGUERIA','STATUS':True}]
+restaurantes = []
 
 # Funçoes cabecario
 def exibir_funcao(texto):
@@ -26,6 +26,7 @@ def iniciar_app():
     print('3. Ativar restaurante')
     print('4. Sair\n')
 def opcao_invalida():
+    os.system('cls')
     input('Opção inválida! pressione enter para tentar novamente...')
     main()
 def cadastrar_restaurante():
@@ -37,7 +38,7 @@ def cadastrar_restaurante():
         categoria = input('Digite a categoria do restaurante: ')
         categoria = categoria.upper()
 
-        dados_novo_restaurante = {'NOME': nome,'CATEGORIA': categoria,'STATUS': False}
+        dados_novo_restaurante = [{'NOME': nome,'CATEGORIA': categoria,'STATUS': False}]
 
         restaurantes.append(dados_novo_restaurante)
 
@@ -53,19 +54,15 @@ def listar_restaurantes():
     exibir_funcao("Lista de restaurantes")
 
     for item in restaurantes:
+
         nome_restaurante = item['NOME']
         categoria_restaurante = item['CATEGORIA']
         status = item['STATUS']
 
-        print(f'- {nome_restaurante} | {categoria_restaurante} | {status}\n')
+        print(f'- {nome} | {categoria} | {status}\n')
 
     retornar_menu()
-def alterar_status():
-    exibir_funcao("Alterar Status")
-    
-    
 
-    retornar_menu()
 
 
 def coletar_escolha():
