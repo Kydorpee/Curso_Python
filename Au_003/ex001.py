@@ -58,8 +58,8 @@ def listar_restaurantes():
         nome = item['NOME']
         categoria = item['CATEGORIA']
         status = item['STATUS']
-        status = 'Ativo' if status else 'Inativo'
-        print(f'- {nome} | {categoria} | {status}\n')
+        status = 'ATIVO' if status else 'INATIVO'
+        print(f' {nome.ljust(15)} | {categoria.ljust(15)} | {status}\n')
 
     retornar_menu()
 
