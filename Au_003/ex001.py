@@ -68,15 +68,16 @@ def alterar_status():
     exibir_funcao("Alteração status")
 
     nome_restaurante = input('Digite o nome do restaurante para alterar o status: ')
-
+    nome_restaurante = nome_restaurante.upper()
+   
     for item in restaurantes:
         if item['NOME'] == nome_restaurante:
             item['STATUS'] = not item['STATUS']
-            print(f'O status do restaurante {nome_restaurante} foi alterado para {item["STATUS"]}.\n')
+            status_atualizado = 'Ativo' if item['STATUS'] else 'Inativo'
+            print(f'O status do restaurante {nome_restaurante} foi alterado para {status_atualizado}.\n')
             break
-
-        else:
-            print(f'Não foi encontrado um restaurante com o nome {nome_restaurante}.\n')
+    else:
+        print(f'Não foi encontrado um restaurante com o nome {nome_restaurante}.\n')
 
     retornar_menu()
 
