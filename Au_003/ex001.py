@@ -25,7 +25,7 @@ def iniciar_app():
 """)
     print('1. Cadastrar restaurante')
     print('2. Listar restaurante')
-    print('3. Ativar restaurante')
+    print('3. Alterar status do restaurante')
     print('4. Sair\n')
 def opcao_invalida():
     os.system('cls')
