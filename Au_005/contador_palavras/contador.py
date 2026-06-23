@@ -1,12 +1,18 @@
 frase = ''
 
-def receber_frase(x):
-    x = input("Digite uma frase: ")
-    return x
-def contar_palavras(x):
-    palavras = x.split()
+def receber_frase(frase):
+    frase = input("Digite uma frase: ")
+    return frase
+def contar_palavras(frase):
+    palavras = frase.split()
     print(len(palavras))
     print(palavras)
+def tratar_frase(frase):
+    frase = frase.lower()
+    caracter = "!@#$%^&*()-_=+[{]};:'\",<.>/?\\|`~"
 
-frase = receber_frase(frase)
-contar_palavras(frase)
+    for char in caracter:
+        frase = frase.replace(char,"")
+    
+    return frase
+
